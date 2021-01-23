@@ -26,17 +26,20 @@ namespace MyDictionaryDemo
             Anahtarlar = new TKey[Anahtarlar.Length + 1];
             Degerler = new TValue[Degerler.Length + 1];
 
+            //döngünün yedeklediğimiz dizideki eleman sayısı kadar dönmesini sağlıyoruz. Bu sayede yedeklerimizi asıl dizilerimize aktarabiliyoruz.
             for (int i = 0; i < tempKeyArray.Length; i++)
             {
                 Anahtarlar[i] = tempKeyArray[i];
                 Degerler[i] = tempValueArray[i];
             }
 
+            //Döngü sonrasında parametre olarak aldığımız değerleri eleman sayılarını artırdığımız dizilerimize ekliyoruz
             Anahtarlar[Anahtarlar.Length - 1] = key;
             Degerler[Degerler.Length - 1] = value;
 
         }
 
+        //Eklediğimiz elemanları konsol ekranında yazdırıyoruz
         public void Yazdir()
         {
             for (int i = 0; i < Anahtarlar.Length; i++)
